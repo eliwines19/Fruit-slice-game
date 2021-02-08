@@ -1,0 +1,41 @@
+body {
+    margin: 0;
+    background-color: #966F33;
+}
+
+p {
+    margin-top: 0;
+}
+
+#main {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#board {
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    border: solid 1px rgb(0, 0, 0);
+    padding: 20pt;
+}
+
+#hearts {
+    display: inline;
+    background-color: black;
+    color: red;
+}
+
+#score {}
+
+#lives-and-score {
+    background-color: #966F33;
+    width: 500pt;
+}
+
+#fruit-board {
+    background-color: #FFFBB9;
+    height: 400pt;
+    width: 100%;
+}
