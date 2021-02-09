@@ -1,41 +1,46 @@
 body {
-    margin: 0;
     background-color: #966F33;
 }
 
-p {
-    margin-top: 0;
+#title {
+    text-align: center;
+    color: rgb(255, 255, 255);
 }
 
-#main {
-    min-height: 100vh;
+#center {
+    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-#board {
-    text-align: center;
+#container {
+    border: solid 2pt black;
     background-color: rgb(255, 255, 255);
-    border: solid 1px rgb(0, 0, 0);
-    padding: 20pt;
+    width: 75%;
+    height: 450pt;
 }
 
-#hearts {
-    display: inline;
-    background-color: black;
-    color: red;
-}
-
-#score {}
-
-#lives-and-score {
+#user-scores {
     background-color: #966F33;
-    width: 500pt;
+    border: solid 2pt rgb(0, 0, 0);
+    padding: 10pt;
+    width: 6%;
+    margin: 5pt 0 0 10pt;
 }
 
-#fruit-board {
-    background-color: #FFFBB9;
-    height: 400pt;
-    width: 100%;
+#hearts-list {
+    padding-left: 0;
+    margin: 0;
+    display: flex;
+    color: #ff0000;
+    list-style: none;
+}
+
+#hearts-list li {
+    margin-right: 5pt;
+}
+
+#score {
+    color: rgb(255, 255, 255);
 }
