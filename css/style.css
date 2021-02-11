@@ -7,7 +7,7 @@ body {
     color: rgb(255, 255, 255);
 }
 
-#center {
+.center {
     margin: 0;
     display: flex;
     justify-content: center;
@@ -16,17 +16,19 @@ body {
 
 #container {
     border: solid 2pt black;
-    background-color: rgb(255, 255, 255);
+    background-color: #92bda3;
     width: 75%;
     height: 450pt;
+    min-width: 425pt;
 }
 
 #user-scores {
     background-color: #966F33;
     border: solid 2pt rgb(0, 0, 0);
-    padding: 10pt;
+    padding: 2pt 10pt;
     width: 6%;
     margin: 5pt 0 0 10pt;
+    min-width: 50pt;
 }
 
 #hearts-list {
@@ -43,4 +45,14 @@ body {
 
 #score {
     color: rgb(255, 255, 255);
+}
+
+#fruit-board {
+    background-color: rgb(255, 255, 255);
+    border: 2pt solid black;
+    margin-top: 10pt;
+    width: 85%;
+    min-width: 400pt;
+    max-width: 500pt;
+    height: 300pt;
 }
