@@ -20,6 +20,10 @@ body {
     width: 75%;
     height: 450pt;
     min-width: 425pt;
+
+    box-shadow: 0 8px 6px -6px rgb(0, 0, 0);
+    -webkit-box-shadow: 0 8px 6px -6px rgb(0, 0, 0);
+    -moz-box-shadow: 0 8px 6px -6px rgb(0, 0, 0);
 }
 
 #user-scores {
@@ -29,6 +33,10 @@ body {
     width: 6%;
     margin: 5pt 0 0 10pt;
     min-width: 50pt;
+
+    box-shadow: 0 8px 6px -6px rgb(0, 0, 0);
+    -webkit-box-shadow: 0 8px 6px -6px rgb(0, 0, 0);
+    -moz-box-shadow: 0 8px 6px -6px rgb(0, 0, 0);
 }
 
 #hearts-list {
@@ -49,10 +57,53 @@ body {
 
 #fruit-board {
     background-color: rgb(255, 255, 255);
-    border: 2pt solid black;
+    border: 2pt solid rgb(0, 0, 0);
     margin-top: 10pt;
     width: 85%;
     min-width: 400pt;
     max-width: 500pt;
     height: 300pt;
+
+    box-shadow: 0 8px 6px -6px rgb(0, 0, 0);
+    -webkit-box-shadow: 0 8px 6px -6px rgb(0, 0, 0);
+    -moz-box-shadow: 0 8px 6px -6px rgb(0, 0, 0);
 }
+
+#start-or-reset {
+    background-color: #966F33;
+    border: solid 2pt rgb(0, 0, 0);
+    padding: 15pt;
+    margin-top: 10pt;
+    font-size: 15pt;
+
+    box-shadow: 0px 4px 0px 0px #000000;
+    -webkit-box-shadow: 0px 4px 0px 0px #000000;
+    -moz-box-shadow: 0px 4px 0px 0px #000000;
+}
+
+#start-or-reset:hover {
+    background-color: #c59142;
+    cursor: pointer;
+}
+
+#start-or-reset:active {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+
+    margin-top: 14pt;
+}
+
+#game-over {
+    margin-top: 5pt;
+    height: 290pt;
+    width: 90%;
+    background: linear-gradient(#A5CC6B, #08605F);
+    color: rgb(255, 255, 255);
+    font-size: 1.5rem;
+    text-align: center;
+    text-transform: uppercase;
+    z-index: 1;
+    display: none;
+}
+
