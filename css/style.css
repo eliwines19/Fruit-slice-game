@@ -107,3 +107,25 @@ body {
     display: none;
 }
 
+#timer {
+    color: white;
+    background-color: #966F33;
+    border: solid 2pt rgb(0, 0, 0);
+    padding: 2pt 10pt;
+    width: 4%;
+    margin: 5pt 0 0 10pt;
+    min-width: 50pt;
+    position: absolute;
+    float: right;
+    display: none;
+
+    box-shadow: 0 8px 6px -6px rgb(0, 0, 0);
+    -webkit-box-shadow: 0 8px 6px -6px rgb(0, 0, 0);
+    -moz-box-shadow: 0 8px 6px -6px rgb(0, 0, 0);
+}
+
+#time {
+    font-weight: bold;
+    font-size: large;
+}
+

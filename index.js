@@ -3,6 +3,7 @@ window.addEventListener('load', function(){
 
     $("#start-or-reset").click(startGame)
 
+    // contingent on text inside the #start-or-reset divs inner html
     var playingStatus = false
 
     function changeText(btn) {
@@ -23,11 +24,30 @@ window.addEventListener('load', function(){
         }
     }
 
+    function beginTimer(timer) {
+        if (playingStatus === true) {
+            timer.show()
+            countdown()
+        } else {
+            timer.hide()
+            endCountdown()
+        }
+    }
+
+    function countdown() {
+        console.log('begin decreasing time')
+    }
+
+    function endCountdown() {
+        console.log('set time to 60 s')
+    }
+
     // if user starts game 
     function startGame() {
         // start game text changes to reset game
         changeText($("#start-or-reset"))
         // timer appears and starts for one minute
+        beginTimer($("#timer"))
             // if timer hits 0
                 // users score is sent to the score in game over div
                 // game score is shown
