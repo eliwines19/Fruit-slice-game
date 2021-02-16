@@ -27,20 +27,30 @@ window.addEventListener('load', function(){
     function beginTimer(timer) {
         if (playingStatus === true) {
             timer.show()
-            countdown()
+            clock();
         } else {
-            timer.hide()
-            endCountdown()
+            location.reload()
         }
     }
 
-    function countdown() {
-        console.log('begin decreasing time')
+    function clock() {
+        let time = parseInt($("#time").html(), 10)
+        let interval = setInterval(function() {
+            if(time <= 1) {
+                clearInterval(interval)
+                playingStatus = false
+                showGameOver()
+            }
+            time -= 1;
+            $("#time").html(time)
+        }, 1000)
+    }
+    
+    function showGameOver() {
+        console.log('show the game over div and the users score')
+        console.log(playingStatus)
     }
 
-    function endCountdown() {
-        console.log('set time to 60 s')
-    }
 
     // if user starts game 
     function startGame() {
