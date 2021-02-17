@@ -1,13 +1,27 @@
 // When screen loads, user is prompted with game board
 window.addEventListener('load', function(){
 
-    function reloadPage() { location.reload() }
+    // contingent on text inside the #start-or-reset divs inner html
+    var playingStatus = false
 
+    // click event listeners
     $("#start-or-reset").click(startGame)
     $("#game-over-reset").click(reloadPage)
 
-    // contingent on text inside the #start-or-reset divs inner html
-    var playingStatus = false
+    // if user starts game 
+    function startGame() {
+        // start game text changes to reset game
+        changeText($("#start-or-reset"))
+        // timer appears and starts for one minute
+        beginTimer($("#timer"))
+        // fruit begins to fall
+        fallingFruit()
+            // fruit falls from top to bottom of screen
+                // if user slices fruit
+                    // score increase by one
+                // if user missed fruit
+                    // score decrease by one
+    }
 
     function changeText(btn) {
         if (btn.html() === "Release the fruit!") {
@@ -36,6 +50,8 @@ window.addEventListener('load', function(){
         }
     }
 
+    function reloadPage() { location.reload() }
+
     function clock() {
         let time = parseInt($("#time").html(), 10)
         let interval = setInterval(function() {
@@ -59,22 +75,12 @@ window.addEventListener('load', function(){
     }
     
     function showGameOver() {
+        $("#timer").hide()
         $("#game-over").show()
     }
 
-
-    // if user starts game 
-    function startGame() {
-        // start game text changes to reset game
-        changeText($("#start-or-reset"))
-        // timer appears and starts for one minute
-        beginTimer($("#timer"))
-        // fruit begins to fall
-            // fruit falls from top to bottom of screen
-                // if user slices fruit
-                    // score increase by one
-                // if user missed fruit
-                    // score decrease by one
+    function fallingFruit() {
+        console.log('make fruit start falling')
     }
 
 })

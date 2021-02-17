@@ -133,3 +133,12 @@ body {
     font-size: large;
 }
 
+#sources {
+    border-radius: 10pt;
+    border: solid 1pt black;
+    background: #92BDA3;
+    color: white;
+    margin: 5pt;
+    padding: 5pt;
+}
+
