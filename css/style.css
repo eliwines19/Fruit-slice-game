@@ -69,7 +69,7 @@ body {
     -moz-box-shadow: 0 8px 6px -6px rgb(0, 0, 0);
 }
 
-#start-or-reset {
+.start-or-reset {
     background-color: #966F33;
     border: solid 2pt rgb(0, 0, 0);
     padding: 15pt;
@@ -81,12 +81,12 @@ body {
     -moz-box-shadow: 0px 4px 0px 0px #000000;
 }
 
-#start-or-reset:hover {
+.start-or-reset:hover {
     background-color: #c59142;
     cursor: pointer;
 }
 
-#start-or-reset:active {
+.start-or-reset:active {
     box-shadow: none;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
@@ -105,6 +105,10 @@ body {
     text-transform: uppercase;
     z-index: 1;
     display: none;
+}
+
+#game-over-reset {
+    width: 20%;
 }
 
 #timer {

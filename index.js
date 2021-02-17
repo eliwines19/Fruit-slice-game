@@ -1,7 +1,10 @@
 // When screen loads, user is prompted with game board
 window.addEventListener('load', function(){
 
+    function reloadPage() { location.reload() }
+
     $("#start-or-reset").click(startGame)
+    $("#game-over-reset").click(reloadPage)
 
     // contingent on text inside the #start-or-reset divs inner html
     var playingStatus = false
@@ -29,26 +32,34 @@ window.addEventListener('load', function(){
             timer.show()
             clock();
         } else {
-            location.reload()
+            reloadPage();
         }
     }
 
     function clock() {
         let time = parseInt($("#time").html(), 10)
         let interval = setInterval(function() {
+            // if timer hits 0
             if(time <= 1) {
                 clearInterval(interval)
                 playingStatus = false
+                // users score is sent to the score in game over div
+                transferScore()
+                // game score is shown
                 showGameOver()
             }
             time -= 1;
             $("#time").html(time)
         }, 1000)
     }
+
+    function transferScore() {
+        const score = $("#score-value").html();
+        $("#final-score").html(score)
+    }
     
     function showGameOver() {
-        console.log('show the game over div and the users score')
-        console.log(playingStatus)
+        $("#game-over").show()
     }
 
 
@@ -58,9 +69,6 @@ window.addEventListener('load', function(){
         changeText($("#start-or-reset"))
         // timer appears and starts for one minute
         beginTimer($("#timer"))
-            // if timer hits 0
-                // users score is sent to the score in game over div
-                // game score is shown
         // fruit begins to fall
             // fruit falls from top to bottom of screen
                 // if user slices fruit
