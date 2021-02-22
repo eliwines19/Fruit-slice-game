@@ -63,6 +63,7 @@ body {
     min-width: 400pt;
     max-width: 500pt;
     height: 300pt;
+    overflow: hidden;
 
     box-shadow: 0 8px 6px -6px rgb(0, 0, 0);
     -webkit-box-shadow: 0 8px 6px -6px rgb(0, 0, 0);
@@ -140,5 +141,15 @@ body {
     color: white;
     margin: 5pt;
     padding: 5pt;
+}
+
+.fruit {
+    background-size: cover;
+
+    /* needs to range between 5 and 80 percent */
+    margin-left: 5%;
+
+    width: 50pt;
+    height: 50pt;
 }
 

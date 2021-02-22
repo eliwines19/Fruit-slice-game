@@ -80,7 +80,17 @@ window.addEventListener('load', function(){
     }
 
     function fallingFruit() {
-        console.log('make fruit start falling')
+        chooseFruit()
+    }
+
+    function chooseFruit() {
+        const number = Math.floor(Math.random() * 30);
+        const fruitDiv = $("<div></div>");
+        fruitDiv.addClass("fruit");
+        fruitDiv.css({
+            "background-image": `url("fruit/${number}.png")`,
+        })
+        $("#fruit-board").append(fruitDiv)
     }
 
 })
