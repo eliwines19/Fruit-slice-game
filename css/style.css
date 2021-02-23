@@ -145,9 +145,11 @@ body {
 
 .fruit {
     background-size: cover;
+    position: relative;
+    top: -5rem;
 
     /* needs to range between 5 and 80 percent */
-    margin-left: 5%;
+    /* margin-left: 5%; */
 
     width: 50pt;
     height: 50pt;

@@ -80,17 +80,32 @@ window.addEventListener('load', function(){
     }
 
     function fallingFruit() {
+        // put this on an interval, occuring in a range of times
         chooseFruit()
     }
 
+    function randomInteger(min, max) {  
+        return Math.floor(Math.random() * (max - min) + min); 
+    }
+
     function chooseFruit() {
-        const number = Math.floor(Math.random() * 30);
         const fruitDiv = $("<div></div>");
         fruitDiv.addClass("fruit");
         fruitDiv.css({
-            "background-image": `url("fruit/${number}.png")`,
+            "background-image": `url("fruit/${randomInteger(1, 30)}.png")`,
+            "margin-left": `${randomInteger(5, 80)}%`
         })
         $("#fruit-board").append(fruitDiv)
+        makeFruitFall(fruitDiv)
+    }
+
+    function makeFruitFall(fruit) {
+        let fruitY = parseInt(fruit.css("top"), 10)
+        let interval = setInterval(function(){
+            fruitY += 2;
+            fruit.css("top", `${fruitY}px`)
+            console.log(fruit.css("top"))
+        }, 1)
     }
 
 })
