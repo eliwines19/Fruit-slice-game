@@ -81,7 +81,10 @@ window.addEventListener('load', function(){
 
     function fallingFruit() {
         // put this on an interval, occuring in a range of times
-        chooseFruit()
+        let interval = setInterval(chooseFruit, randomInteger(2000, 6000))
+        if (playingStatus === false) {
+            clearInterval(interval)
+        }
     }
 
     function randomInteger(min, max) {  
@@ -96,16 +99,31 @@ window.addEventListener('load', function(){
             "margin-left": `${randomInteger(5, 80)}%`
         })
         $("#fruit-board").append(fruitDiv)
+        addClickEvent(fruitDiv)
         makeFruitFall(fruitDiv)
+    }
+
+    function addClickEvent(fruit) {
+        fruit.click(function(){
+            // remove fruit
+            fruit.remove()
+            // add 1 point
+            // make popup for hit fruit (boom, bam, booyah)
+        })
     }
 
     function makeFruitFall(fruit) {
         let fruitY = parseInt(fruit.css("top"), 10)
+        let fruitSpeed = randomInteger(2,6)
         let interval = setInterval(function(){
-            fruitY += 2;
+            fruitY += fruitSpeed;
             fruit.css("top", `${fruitY}px`)
-            console.log(fruit.css("top"))
-        }, 1)
+            // fruit exits the screen
+            if (fruitY >= 400) {
+                clearInterval(interval)
+                fruit.remove()
+            }
+        }, 10)
     }
 
 })
