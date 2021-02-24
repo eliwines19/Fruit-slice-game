@@ -1,4 +1,3 @@
-// When screen loads, user is prompted with game board
 window.addEventListener('load', function(){
 
     // contingent on text inside the #start-or-reset divs inner html
@@ -8,7 +7,6 @@ window.addEventListener('load', function(){
     $("#start-or-reset").click(startGame)
     $("#game-over-reset").click(reloadPage)
 
-    // if user starts game 
     function startGame() {
         // start game text changes to reset game
         changeText($("#start-or-reset"))
@@ -16,11 +14,6 @@ window.addEventListener('load', function(){
         beginTimer($("#timer"))
         // fruit begins to fall
         fallingFruit()
-            // fruit falls from top to bottom of screen
-                // if user slices fruit
-                    // score increase by one
-                // if user missed fruit
-                    // score decrease by one
     }
 
     function changeText(btn) {
@@ -80,7 +73,6 @@ window.addEventListener('load', function(){
     }
 
     function fallingFruit() {
-        // put this on an interval, occuring in a range of times
         let interval = setInterval(chooseFruit, randomInteger(2000, 6000))
         if (playingStatus === false) {
             clearInterval(interval)
@@ -108,6 +100,10 @@ window.addEventListener('load', function(){
             // remove fruit
             fruit.remove()
             // add 1 point
+            let scoreValue = parseInt($("#score-value").html())
+            scoreValue += 1;
+            $("#score-value").html(scoreValue.toString())
+
             // make popup for hit fruit (boom, bam, booyah)
         })
     }
@@ -126,9 +122,7 @@ window.addEventListener('load', function(){
         }, 10)
     }
 
+
+
 })
 
-    // if user ends game
-        // score is set to zero
-        // game over div display is none
-        // time is no longer showing and is set to 60 seconds
