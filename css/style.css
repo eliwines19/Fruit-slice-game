@@ -151,7 +151,14 @@ body {
     /* needs to range between 5 and 80 percent */
     /* margin-left: 5%; */
 
-    width: 50pt;
-    height: 50pt;
+    width: 50px;
+    height: 50px;
+}
+
+.trail {
+    position: absolute;
+    height: 6px; width: 6px;
+    border-radius: 3px;
+    background: red;
 }
 
