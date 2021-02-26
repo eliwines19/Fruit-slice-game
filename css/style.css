@@ -70,6 +70,10 @@ body {
     -moz-box-shadow: 0 8px 6px -6px rgb(0, 0, 0);
 }
 
+#fruit-board:hover {
+    cursor: url("/icons/sword.png"), auto;
+}
+
 .start-or-reset {
     background-color: #966F33;
     border: solid 2pt rgb(0, 0, 0);
