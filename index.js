@@ -110,15 +110,17 @@ $(function(){
 
     function applyMouseOver(fruit) {
         fruit.mouseover(function(){
-            fruit.remove()
-            addPoint()
+            var audio = new Audio("sounds/slice.wav");
+            audio.play();
+            fruit.remove();
+            addPoint();
         })
     }
 
     function addPoint(){
-        let score = parseInt($("#score-value").html())
+        let score = parseInt($("#score-value").html());
         score += 1;
-        $("#score-value").html(score.toString())
+        $("#score-value").html(score.toString());
     }
 
 })
